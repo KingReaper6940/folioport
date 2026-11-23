@@ -1,0 +1,309 @@
+{
+  "schema": "folioport-report/1",
+  "settings": {
+    "schema": "folioport/1",
+    "title": "Practice booklet",
+    "paper": "a4",
+    "signature": 8,
+    "margin": 6,
+    "gutter": 4,
+    "binding": "left",
+    "notes": "Ten original numbered practice pages. Last signature has two added blank panels. Check a physical duplex test before printing anything important."
+  },
+  "source": {
+    "name": "numbered-practice.pdf",
+    "bytes": 7510,
+    "pages": 10,
+    "sha256": "96dc72e96edfb49014f1596975d392a747f6d93e5fdf57c477459e5ebe0cd0cc",
+    "annotations": 0,
+    "boxes": [
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      },
+      {
+        "x": 0,
+        "y": 0,
+        "width": 420,
+        "height": 595,
+        "hasContent": true
+      }
+    ]
+  },
+  "layout": {
+    "settings": {
+      "schema": "folioport/1",
+      "title": "Practice booklet",
+      "paper": "a4",
+      "signature": 8,
+      "margin": 6,
+      "gutter": 4,
+      "binding": "left",
+      "notes": "Ten original numbered practice pages. Last signature has two added blank panels. Check a physical duplex test before printing anything important."
+    },
+    "pageCount": 10,
+    "signatures": [
+      {
+        "number": 1,
+        "start": 1,
+        "end": 8,
+        "padded": 8,
+        "blanks": 0,
+        "sheets": 2
+      },
+      {
+        "number": 2,
+        "start": 9,
+        "end": 10,
+        "padded": 4,
+        "blanks": 2,
+        "sheets": 1
+      }
+    ],
+    "sides": [
+      {
+        "number": 1,
+        "signature": 1,
+        "sheet": 1,
+        "face": "front",
+        "left": 8,
+        "right": 1
+      },
+      {
+        "number": 2,
+        "signature": 1,
+        "sheet": 1,
+        "face": "back",
+        "left": 2,
+        "right": 7
+      },
+      {
+        "number": 3,
+        "signature": 1,
+        "sheet": 2,
+        "face": "front",
+        "left": 6,
+        "right": 3
+      },
+      {
+        "number": 4,
+        "signature": 1,
+        "sheet": 2,
+        "face": "back",
+        "left": 4,
+        "right": 5
+      },
+      {
+        "number": 5,
+        "signature": 2,
+        "sheet": 3,
+        "face": "front",
+        "left": null,
+        "right": 9
+      },
+      {
+        "number": 6,
+        "signature": 2,
+        "sheet": 3,
+        "face": "back",
+        "left": 10,
+        "right": null
+      }
+    ],
+    "sheets": 3,
+    "blanks": 2
+  },
+  "audit": {
+    "verified": true,
+    "sourcePages": 10,
+    "paddedPages": 12,
+    "blankPanels": 2,
+    "sheets": 3,
+    "outputPages": 6,
+    "foldedReadingOrder": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      null,
+      null
+    ]
+  },
+  "placements": [
+    {
+      "side": 1,
+      "slot": 0,
+      "sourcePage": 8,
+      "x": 18.050023158869838,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 1,
+      "slot": 1,
+      "sourcePage": 1,
+      "x": 427.6563223714684,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 2,
+      "slot": 0,
+      "sourcePage": 2,
+      "x": 18.050023158869838,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 2,
+      "slot": 1,
+      "sourcePage": 7,
+      "x": 427.6563223714684,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 3,
+      "slot": 0,
+      "sourcePage": 6,
+      "x": 18.050023158869838,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 3,
+      "slot": 1,
+      "sourcePage": 3,
+      "x": 427.6563223714684,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 4,
+      "slot": 0,
+      "sourcePage": 4,
+      "x": 18.050023158869838,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 4,
+      "slot": 1,
+      "sourcePage": 5,
+      "x": 427.6563223714684,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 5,
+      "slot": 0,
+      "sourcePage": null
+    },
+    {
+      "side": 5,
+      "slot": 1,
+      "sourcePage": 9,
+      "x": 427.6563223714684,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 6,
+      "slot": 0,
+      "sourcePage": 10,
+      "x": 18.050023158869838,
+      "y": 17.007874015748033,
+      "width": 396.1834182491895,
+      "height": 561.2598425196851,
+      "scale": 0.9432938529742607
+    },
+    {
+      "side": 6,
+      "slot": 1,
+      "sourcePage": null
+    }
+  ]
+}

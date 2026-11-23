@@ -1,0 +1,16 @@
+import {mkdir,readFile,writeFile,rm} from 'node:fs/promises';
+import {resolve,dirname} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {execFileSync} from 'node:child_process';
+import {build} from 'esbuild';
+const root=resolve(dirname(fileURLToPath(import.meta.url)),'..'),out=resolve(root,'dist');
+if(dirname(out)!==root||out===root)throw Error('Unexpected build path.');
+for(const name of ['model','plan','audit','pdf','example','exports','files','app'])execFileSync(process.execPath,['--check',resolve(root,'src/'+name+'.mjs')]);
+await rm(out,{recursive:true,force:true});await mkdir(out,{recursive:true});
+for(const name of ['index.html','style.css','favicon.svg','chevron.svg'])await writeFile(resolve(out,name),(await readFile(resolve(root,name),'utf8')).replaceAll('\r\n','\n'));
+await build({absWorkingDir:root,entryPoints:['src/app.mjs'],outfile:resolve(out,'app.js'),bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true,legalComments:'eof'});
+const notices=[['pdf-lib','LICENSE.md'],['@pdf-lib/standard-fonts','LICENSE.md'],['@pdf-lib/upng','LICENSE'],['pako','LICENSE'],['tslib','LICENSE.txt']];
+let text='Folioport bundled runtime dependency licenses\n\n';
+for(const [name,file] of notices)text+='===== '+name+' =====\n'+await readFile(resolve(root,'node_modules',name,file),'utf8')+'\n\n';
+await writeFile(resolve(root,'THIRD_PARTY_NOTICES.txt'),text.replaceAll('\r\n','\n'));await writeFile(resolve(out,'THIRD_PARTY_NOTICES.txt'),text.replaceAll('\r\n','\n'));
+console.log('Built Folioport: six static assets including bundled PDF engine and full runtime notices.');

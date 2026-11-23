@@ -15,7 +15,7 @@ export function mount(document,options={}){
   for(const k of ['signature','margin','gutter']){const text=$(k).value;if(!/^(0|[1-9][0-9]*)(\.[0-9]+)?$/.test(text))throw Error('Use nonnegative decimal settings without spaces or exponents.');p[k]=Number(text)}
   return validate(p);
  }
- function fields(p){for(const k of ['title','paper','signature','margin','gutter','binding','notes'])$(k).value=p[k]}
+ function fields(p){if(![...document.getElementById('signature').options].some(o=>Number(o.value)===p.signature)){const o=node('option',p.signature+' pages · '+p.signature/4+' sheets');o.value=p.signature;document.getElementById('signature').append(o)}for(const k of ['title','paper','signature','margin','gutter','binding','notes'])$(k).value=p[k]}
  function showSource(){
   $('source-name').textContent=info?.name||'No PDF selected';$('source-info').textContent=info?info.pages+' pages · '+(info.bytes/1024).toFixed(1)+' KiB':'1–128 pages · up to 10 MiB';
   $('source-hash').textContent=info?.sha256||'No source loaded.';
@@ -39,8 +39,8 @@ export function mount(document,options={}){
   renderSides();
  }
  async function loadSource(bytes,name,settings){
-  const token=++revision;status('Reading PDF locally…');
-  try{const next=await services.inspect(bytes,name);if(token!==revision)return false;source=Uint8Array.from(bytes);info=next;if(settings)fields(validate(settings));showSource();stale();status('PDF ready: '+info.pages+' source pages. Review settings, then make the booklet.');return true}
+  const nextSettings=settings?validate(settings):null;const token=++revision;status('Reading PDF locally…');
+  try{const next=await services.inspect(bytes,name);if(token!==revision)return false;source=Uint8Array.from(bytes);info=next;if(nextSettings)fields(nextSettings);showSource();stale();status('PDF ready: '+info.pages+' source pages. Review settings, then make the booklet.');return true}
   catch(error){if(token===revision)status('PDF not opened; previous source kept. '+error.message,'error');return false}
  }
  $('settings').addEventListener('input',stale);$('settings').addEventListener('change',stale);
