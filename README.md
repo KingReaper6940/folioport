@@ -2,6 +2,8 @@
 
 From pages to folded paper.
 
+**[Open Folioport](https://folioport-beryl.vercel.app)**
+
 Folioport turns a small PDF into a real two-up booklet PDF, entirely in your browser. Choose a sheet size, signature size and binding edge; inspect the page order and added blank panels before taking the file to your printer.
 
 - **Actual PDF output:** source page artwork is embedded into landscape A4 or US Letter sheets.
@@ -47,7 +49,7 @@ The workspace shows an **order diagram**, not a render of your source artwork. T
 
 The source PDF is never overwritten. Settings files contain only settings and notes, **not the source PDF**. Reopen the PDF separately when returning to a saved setup. Receipts include the source filename, geometry and SHA-256 fingerprint, but no source bytes.
 
-Draft edits mark the previous output stale and disable downloads. Failed imports keep previous work. Later edits or source changes cancel pending reads/builds. Clearing or closing releases the current in-memory workflow; no automatic persistent copy is created. This is not a secure-memory-erasure guarantee.
+Draft edits mark the previous output stale and disable downloads. Failed imports keep previous work. Later edits or source changes discard pending results; they do not interrupt PDF parsing already in progress. Clearing or closing releases the current in-memory workflow; no automatic persistent copy is created. This is not a secure-memory-erasure guarantee.
 
 ## Print and fold
 
@@ -80,7 +82,7 @@ The auditor independently places the viewed panels back into the folded reading 
 
 ## Artwork and document features
 
-Folioport makes a **new page-artwork PDF**. It does not retain source links, annotations, bookmarks, tags, attachments, interactive document structure or original document metadata. The preflight displays how many source annotations were found; visible annotation appearances may therefore be absent in output.
+Folioport makes a **new page-artwork PDF**. It does not retain source links, annotations, bookmarks, tags, attachments, interactive document structure or original document metadata. Generated PDF metadata uses fixed Unix-epoch timestamps; those are reproducibility markers, not publication or creation dates. The preflight displays how many source annotations were found; visible annotation appearances may therefore be absent in output.
 
 Interactive fields, XFA and page widgets, including orphan widgets and signature widgets, are rejected rather than silently flattened. Do not use this tool to preserve signatures, accessibility tagging, forms or archival conformance.
 
