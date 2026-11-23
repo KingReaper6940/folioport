@@ -1,0 +1,2 @@
+export async function readFile(file,limit){if(!file||file.size>limit)throw Error('File exceeds the allowed byte size.');return new Uint8Array(await file.arrayBuffer())}
+export function downloads(document){let last;return {save(name,type,data){if(last)URL.revokeObjectURL(last);last=URL.createObjectURL(new Blob([data],{type}));const a=document.createElement('a');a.href=last;a.download=name;document.body.append(a);a.click();a.remove()},dispose(){if(last)URL.revokeObjectURL(last);last=undefined}}}

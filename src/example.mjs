@@ -1,0 +1,1 @@
+export const example={schema:'folioport/1',title:'Practice booklet',paper:'a4',signature:8,margin:6,gutter:4,binding:'left',notes:'Ten original numbered practice pages. Last signature has two added blank panels. Check a physical duplex test before printing anything important.'};
